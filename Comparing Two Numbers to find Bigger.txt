@@ -1,0 +1,64 @@
+
+
+
+#include <iostream>// for cin and cout
+#include <string> // for textual data
+
+using namespace std;
+
+//Function declarations or prototypes
+
+void GetTwoNumbers(int *num1_ptr, int *num2_ptr);
+int FindBigOne(int num1, int num2);
+string answer;
+
+//main function
+int main() {
+	do{
+	int num1, num2, x; //declaring variables
+
+	GetTwoNumbers(&num1, &num2);
+	x = FindBigOne(num1, num2);
+	cout << "The bigger number is  : " << x << endl;
+
+	cout << "\n Do you want to  repeat or do again yes/no " ;
+	getline(cin,answer);
+	} while(answer == "yes");
+	
+
+	system ("pause");
+	return 0; 
+
+}
+
+
+
+// The get number function
+void GetTwoNumbers(int *num1_ptr, int *num2_ptr){
+
+	cout << "\nPlease enter the first number : " ;
+		cin >> *num1_ptr;
+	cout << "\nPlease enter the second number : " ;
+		cin >> *num2_ptr;
+	cin.ignore();
+}
+
+//The comparing function
+int FindBigOne(int num1, int num2) {
+	if(num1 > num2) {
+		return num1;
+	}
+	else if (num2 > num1) {
+		return  num2;
+
+	}
+	else if (num1 = num2){
+		return num1;
+	}
+}
+
+
+
+
+
+
